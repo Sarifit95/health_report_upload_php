@@ -66,5 +66,6 @@ class DBController {
         $this->bindQueryParams($sql, $param_type, $param_value_array);
         $sql->execute();
     }
+
 }
 ?>

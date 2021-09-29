@@ -47,6 +47,14 @@ class ImageUpload
         }
 
     }
+    function removefile($imagename, $folder){
+
+        if (!empty($imagename) && file_exists($folder.'/'.$imagename)){
+            unlink($folder.'/'.$imagename);
+        }
+
+
+    }
 
 
 

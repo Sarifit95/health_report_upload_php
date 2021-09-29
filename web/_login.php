@@ -1,10 +1,36 @@
 <h3 style="text-align: center">Login</h3>
 
 <div class="row">
+    <style type="text/css">
+        .loginbtn{
+            box-shadow: 4px 4px green; border-radius:10px;
+        }
+        .border{
+            box-shadow: 8px 8px royalblue; border-radius: 10px;
+            border: 1px solid royalblue !important;
+        }
+        .error{
+            color: red;
+            font-size: 12px;
+        }
+
+    </style>
     <div class="col-md-8 offset-md-2">
-        <div class="card">
+        <div class="card border" style="">
             <div class="card-body" style=" text-align: center;">
-                <form  action="" method="POST" name="login" id="sign_in" novalidate="novalidate">
+                <?php
+                if (!empty($_SESSION['msg'])){
+                    ?>
+                    <p style="text-align: center; background-color: green;color: white;" >
+                        <?php echo $_SESSION['msg']; unset($_SESSION['msg']); ?>
+                    </p>
+
+                    <?php
+
+                }
+
+                ?>
+                <form  action="" method="POST" name="login" id="login" novalidate="novalidate">
 
                     <div class="form-group row">
                         <label for="name_en" class="col-md-2 col-form-label">Mobile No</label>
@@ -29,7 +55,7 @@
 
 
                         <div class="col-md-6 offset-md-2">
-                            <button type="submit" class="btn btn-primary" style="background-color: #00b5ad;">Log In</button>
+                            <button  type="submit" class="btn btn-success loginbtn" style="">Log In</button>
 
                         </div>
 

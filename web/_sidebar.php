@@ -29,7 +29,7 @@ body {
                 color: white;
             }
 
-            .sidebar a:hover:not(.active) {
+            .sidebar .documents:hover:not(.active) {
     background-color: #00b5ad;
                 color: white;
             }
@@ -60,11 +60,39 @@ body {
         <style type="text/css">
 
             .mselect{
-    background-color: #ACC1FF;
+                background-color: #ACC1FF;
                 border-radius: 10px;
+            }
+            .documents{
+                text-align: center;
+                background-color: green;
+                width: 77px;
+                margin: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 13px;
+                padding: 5px !important;
+                border-radius: 10px;
+                color: wheat !important;
+                font-weight: bold;
+                box-shadow: 3px 4px black;
+            }
+            .logout{
+                text-align: center;
+                background-color: red;
+                width: 77px;
+                margin: auto;
+                font-size: 13px;
+                padding: 5px !important;
+                border-radius: 10px;
+                color: wheat !important;
+                font-weight: bold;
+                box-shadow: 3px 4px darkred;
             }
 
         </style>
+
+
 
 
 
@@ -79,8 +107,9 @@ body {
                 <img src="image/<?=$image?>" style="width: 50px; height: 50px; border-radius: 50%;" alt="">
                 <p style="color: black"><?=$_SESSION['user_name']?></p>
             </a>
-            <a class="cb" id="user" href="user.php?lang=bn">User Information</a>
-            <a class="cb" id="documents" href="documents.php?lang=bn">Documents</a>
+
+            <a class="cb documents" id="documents" href="document">Documents</a>
+            <a class="logout" href="index?action=log_out">Logout</a>
 
         </div>
 
@@ -88,11 +117,7 @@ body {
         <script>
 
             var url = window.location.pathname;
-
-            if(url.includes("/user.php") ==true ) {
-                $("#user").addClass("mselect");
-
-            }  else if(url.includes("/documents.php") ==true ) {
+                 if(url.includes("/documents") ==true ) {
                 $("#documents").addClass("mselect");
 
             }
