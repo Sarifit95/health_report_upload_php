@@ -3,7 +3,8 @@
 User login or register and upload there Health record with document type
 =======
 1.create database with name documents and import documents.sql file 
-		Database has two table 
+		Database has two table
+		
 		1.first table "users" -> 
 			fild name:
 					1.(id (integer | Primary key |Auto increment))
