@@ -8,13 +8,29 @@
         box-shadow: 8px 8px royalblue; border-radius: 10px;
         border: 1px solid royalblue !important;
     }
+    .error{
+        font-size: 12px;
+        color: red;
+    }
 
 </style>
 <div class="row">
     <div class="col-md-8 offset-md-2">
         <div class="card">
+            <?php
+            if (!empty($_SESSION['msg'])){
+                ?>
+                <p style="text-align: center; background-color: green;color: white;" >
+                    <?php echo $_SESSION['msg']; unset($_SESSION['msg']); ?>
+                </p>
+
+            <?php
+
+            }
+
+            ?>
             <div class="card-body" style=" text-align: center;">
-                <form  action="" method="POST" name="login" id="sign_in" novalidate="novalidate">
+                <form  action="" method="POST" name="sign-up" id="sign-up" enctype="multipart/form-data">
 
                     <div class="form-group row">
                         <label for="name" class="col-md-2 col-form-label">Name</label>
@@ -26,7 +42,7 @@
                     <div class="form-group row">
                         <label for="email" class="col-md-2 col-form-label">Email</label>
                         <div class="col-md-8">
-                            <input type="email" id="email" name="email" class="form-control" placeholder="">
+                            <input type="email" id="email" name="email" class="form-control" >
                         </div>
 
                     </div>
@@ -34,6 +50,13 @@
                         <label for="name_en" class="col-md-2 col-form-label">Mobile No</label>
                         <div class="col-md-8">
                             <input type="text" id="mobile" name="mobile" class="form-control" placeholder="01*********">
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="image" class="col-md-2 col-form-label">Image</label>
+                        <div class="col-md-8">
+                            <input type="file" id="image" name="image" class="form-control" placeholder="01*********">
                         </div>
 
                     </div>
