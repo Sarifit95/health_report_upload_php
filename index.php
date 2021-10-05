@@ -16,7 +16,7 @@ if (!empty($_SESSION['user_id'])){
 
 
     <?php
-    if ($_REQUEST['action']=='sign-up'){
+    if (isset($_REQUEST['action'])  && $_REQUEST['action']=='sign-up'){
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $name=trim($_POST['name']);
@@ -74,7 +74,7 @@ if (!empty($_SESSION['user_id'])){
 
         include("web/_sign_up.php");
     }
-    if ($_REQUEST['action']=='log_out'){
+    if (isset($_REQUEST['action']) && $_REQUEST['action']=='log_out'){
         unset($_SESSION['user_id']);
         unset($_SESSION['user_name']);
         unset($_SESSION['user_image']);
@@ -122,7 +122,7 @@ if (!empty($_SESSION['user_id'])){
 </div>
 
 <?php
-if ($_REQUEST['action']=='sign-up'){
+if (isset($_REQUEST['action']) && $_REQUEST['action']=='sign-up'){
 ?>
 <script src="js/registration.js" type="text/javascript"></script>
 
