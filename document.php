@@ -20,7 +20,7 @@ if (empty($_SESSION['user_id'])){
 
 
     <?php
-    if ($_REQUEST['action']=='add_new'){ // action==add_new is when user is need to add document
+    if (isset($_REQUEST['action']) && $_REQUEST['action']=='add_new'){ // action==add_new is when user is need to add document
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -74,7 +74,7 @@ if (empty($_SESSION['user_id'])){
 
     }
 
-    if ($_REQUEST['action']=='delete' && isset($_GET['id'])){
+    if (isset($_REQUEST['action']) &&  $_REQUEST['action']=='delete' && isset($_GET['id'])){
         $documentid=$_GET['id'];
         $deletedocument=$document->getDocumentById($documentid); // select document for image name
 
@@ -119,7 +119,7 @@ if (empty($_SESSION['user_id'])){
 
 <?php
 
-if ($_REQUEST['action']=='edit'){
+if (isset($_REQUEST['action']) && $_REQUEST['action']=='edit'){
 
     ?>
 
