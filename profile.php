@@ -23,7 +23,7 @@ if (empty($_SESSION['user_id'])){
 
 
     <?php
-    if ($_REQUEST['action']=='edit'){
+    if (isset($_REQUEST['action']) && $_REQUEST['action']=='edit'){
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -111,7 +111,7 @@ if (empty($_SESSION['user_id'])){
 
 <?php
 
-if ($_REQUEST['action']=='edit'){
+if (isset($_REQUEST['action']) && $_REQUEST['action']=='edit'){
 
     ?>
 
