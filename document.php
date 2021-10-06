@@ -59,7 +59,7 @@ if (empty($_SESSION['user_id'])){
             if ($inset){
 
 
-                $_SESSION['imsg']="Document Inserted Successfully!";
+                $_SESSION['imsg']="Document Inserted Successfully!"; // message inserted successfully
 
                 header("Location:document");
             }
